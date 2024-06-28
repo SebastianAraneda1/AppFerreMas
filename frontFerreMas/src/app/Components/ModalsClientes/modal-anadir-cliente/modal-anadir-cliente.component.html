@@ -1,0 +1,32 @@
+<form>
+    <div class="container">
+
+        <div class="mb-3">
+        <label>Nombre Cliente:</label>
+        <input class="form" type="text" name="nombre" minlength="1" [(ngModel)]="nuevoCliente.nombre">
+        </div>
+
+        <div class="mb-3">
+        <label>Rut:</label>
+        <input class="form" type="text" name="rut" minlength="1" [(ngModel)]="nuevoCliente.rut">
+        </div>
+
+        <div class="mb-3">
+        <label>Direccion:</label>
+        <input class="form" type="text" name="Direccion" minlength="1" [(ngModel)]="nuevoCliente.direccion">
+        </div>
+
+        <div class="mb-3">
+        <label>Correo:</label>
+        <input class="form" type="text" name="Correo" minlength="1" [(ngModel)]="nuevoCliente.correo">
+        </div>
+
+        <div class="d-grid">
+        <button class="button btn-lg btn-success"></button>
+        </div>
+
+        <button type="button" class="btn btn-success" (click)="agregarCliente()">Guardar</button>
+        <button type="button" class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
+
+    </div>
+</form>

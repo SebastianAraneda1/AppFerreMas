@@ -1,0 +1,32 @@
+<form>
+    <div class="container">
+
+    <div class="mb-3">
+        <label>Nombre Cliente:</label>
+        <input class="form" type="text" name="nombre" minlength="1" [(ngModel)]="clienteAEditar.nombre">
+    </div>
+    
+    <div class="mb-3">
+        <label>Descripcion:</label>
+        <input class="form" type="text" name="descripcion" minlength="1" [(ngModel)]="clienteAEditar.rut">
+    </div>
+
+    <div class="mb-3">
+        <label>Direccion:</label>
+        <input class="form" type="text" name="direccion" [(ngModel)]="clienteAEditar.direccion">
+    </div>
+
+    <div class="mb-3">
+        <label>Correo:</label>
+        <input class="form" type="text" name="correo"  [(ngModel)]="clienteAEditar.correo">
+    </div>
+
+    <div class="d-grid">
+        <button class="button btn-lg btn-success"></button>
+    </div>
+
+    <button type="button" class="btn btn-success" (click)="editarCliente()">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
+
+    </div>
+</form>

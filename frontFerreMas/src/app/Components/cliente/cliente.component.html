@@ -1,0 +1,95 @@
+<div class="boton">
+  <button (click)="goToAdminPage()" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ir a parte administrativa</button>
+</div>
+
+<div class="cuadroTitulo">
+    <h1 class="tituloPrincipal">Bienvenido a FERREMAS</h1>
+</div>
+
+<div class="container cuadroFormulario">
+
+  <form>
+
+    <div class="container formulario">
+
+      <label for="cboCliente">Cliente:</label>
+
+      <select name="cboCliente" id="cboCliente" (change)="seleccionarCliente($event)">
+
+        <option value="" selected disabled hidden>Seleccione</option>
+
+        <option *ngFor="let cliente of listaClientes" [value]="cliente.id">
+          {{cliente.nombre}}
+        </option>
+
+      </select>
+
+      <label for="cboProducto">Producto:</label>
+
+      <select name="cboProducto" id="cboProducto" (change)="seleccionarProducto($event)">
+
+        <option [value]="0" selected disabled hidden>Seleccione</option>
+
+        <option *ngFor="let producto of listaProductos" value="{{producto.id}}" >
+          {{producto.nombre}}
+        </option>
+
+      </select>
+
+      <label for="txtCantidad">Cantidad:</label>
+      <input [(ngModel)]="cantidad" type="number" name="txtCantidad" id="txtCantidad"> 
+
+      <label for="tipo_entrega">Tipo de entrega:</label>
+
+      <select [(ngModel)]="tipoEntrega" name="tipo_entrega" id="tipo_entrega">
+
+          <option value="0">Despacho</option>
+          <option value="1">Retiro</option>
+
+      </select>
+      <br>
+      <div class="botonEnviar">
+          <button id="btnEnviar" type="button" class="btn btn-primary btn-lg btn-block"(click)="descontarStock()" >Enviar Boleta</button>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+<div id="tabla" class="container">
+
+  <table class="table table-striped table-info">
+
+    <thead>
+
+      <tr>
+        <th>Código boleta</th>
+        <th>Cliente</th>
+        <th>Direccion</th>
+        <th>Codigo Producto</th>
+        <th>Cantidad llevada</th>
+        <th>Total</th>
+        <th>Tipo Entrega</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody id="tbody" *ngFor="let boleta of listaBoletas">
+      <tr>
+        <th>{{boleta.id}}</th>
+        <td>{{boleta.nombre_cliente}}</td>
+        <td>{{boleta.direccion_cliente}}</td>
+        <td>{{boleta.id_producto}}</td>
+        <td>{{boleta.cantidad}}</td>
+        <td>{{boleta.total_venta}}</td>
+        <td>{{boleta.tipo_entrega}}</td>
+        <td>enviado</td>
+        <button class="btn btn-success" (click)="eliminarBoleta(boleta.id)">Entregado</button>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

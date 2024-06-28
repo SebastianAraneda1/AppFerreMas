@@ -1,0 +1,73 @@
+<div class="mb-2">
+    <button [routerLink]="(['/'])" class="btn btn-secondary">Ir a generar boletas</button>
+</div>
+
+<div class="container">
+    <button class="btn btn-info col-6" (click)="agregarProducto()">Agregar producto</button>
+    <button class="btn btn-warning col-6" (click)="agregarCliente()">Agregar cliente</button>
+</div>
+
+<div class="container tablaTareas">
+
+    <div class="row align-items-start">
+        <div class="col-6">
+            <h4 style="text-align: center;">Productos</h4>
+            <table class="table table-warning table-striped">
+
+                <thead>
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">precio</th>
+                    <th scope="col">Cantidad</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr *ngFor="let producto of listaProductos">
+                    <th scope="row">{{producto.id}}</th>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.descripcion}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    
+                    <button class="btn btn-danger" (click)="editarProducto(producto)">Editar</button>
+                    <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="col-6">
+            <h4 style="text-align: center;">Clientes</h4>
+            <table class="table table-warning table-striped">
+
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Rut</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Correo</th>
+                </tr>
+                </thead>
+            
+                <tbody>
+                <tr *ngFor="let cliente of listaClientes">
+                    <th scope="row">{{cliente.id}}</th>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.rut}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.correo}}</td>
+                    
+                    <button class="btn btn-danger" (click)="editarCliente(cliente)">Editar</button>
+                    <button class="btn btn-danger" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div> 

@@ -1,0 +1,32 @@
+<form>
+    <div class="container">
+
+      <div class="mb-3">
+        <label>Nombre producto:</label>
+        <input class="form" type="text" name="nombre" minlength="1" [(ngModel)]="nuevoProducto.nombre">
+      </div>
+
+      <div class="mb-3">
+        <label>Descripcion:</label>
+        <input class="form" type="text" name="descripcion" minlength="1" [(ngModel)]="nuevoProducto.descripcion">
+      </div>
+
+      <div class="mb-3">
+        <label>Precio:</label>
+        <input class="form" type="number" name="precio" minlength="1" [(ngModel)]="nuevoProducto.precio">
+      </div>
+
+      <div class="mb-3">
+        <label>Cantidad:</label>
+        <input class="form" type="number" name="cantidad" minlength="1" [(ngModel)]="nuevoProducto.cantidad">
+      </div>
+
+      <div class="d-grid">
+        <button class="button btn-lg btn-success"></button>
+      </div>
+  
+      <button type="button" class="btn btn-success" (click)="agregarProducto()">Guardar</button>
+      <button type="button" class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
+  
+    </div>
+  </form>

@@ -1,0 +1,27 @@
+.cuadroTitulo{
+    background-color:  rgba(255, 220, 143, 0.768);
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 50px;
+    border-radius: 5vb;
+}
+
+.tituloPrincipal{
+    text-align: center;
+    color: rgb(0, 65, 187);
+}
+
+.cuadroFormulario{
+    background-color: rgba(255, 220, 143, 0.768);
+    margin: auto;
+    border-radius: 5vb;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    place-items: center;
+}
